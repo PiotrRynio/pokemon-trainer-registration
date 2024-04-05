@@ -38,3 +38,7 @@ next-env.d.ts
 # ide
 .idea
 
+# dev
+src/_devFragments
+
+

@@ -1,37 +1,41 @@
-"use client";
+import { Box, Typography } from "@mui/material";
 
-// import styled from "@emotion/styled";
-// import { Button as MaterialButton, Container } from "@mui/material";
-// import { styled } from "@mui/system";
-// import Image from "next/image";
-import { styled } from "@mui/material";
-import localFont from "next/font/local";
-
+import { PokemonSearcher } from "@/app/_components/PokemonSearcher/PokemonSearcher";
+import { VisitDate } from "@/app/_components/ServerDate/VisitDate";
+import { StyledWrapper } from "@/app/_components/StyledWrapper/StyledWrapper";
+import { getCurrentTimeFromApi } from "@/app/_utils/getCurrentTimeFromApi/getCurrentTimeFromApi";
 import { BaseButton } from "@/components/Buttons/BaseButton";
 import { BaseChip } from "@/components/Chips/BaseChip";
-import { BaseTextInput } from "@/components/Inputs/TextInput/BaseTextInput";
-import imbVga from "@/fonts/Web437_IBM_VGA_9x16.woff";
+import { BaseTextInput } from "@/components/Inputs/TextInput/BaseTextInput/BaseTextInput";
+import { LabeledTextInput } from "@/components/Inputs/TextInput/LabeledTextInput/LabeledTextInput";
+import { BodyText } from "@/components/Typographies/BodyText/BodyText";
+import { Subtitle } from "@/components/Typographies/Subtitle/Subtitle";
 
-// Font files can be colocated inside of `app`
+const Home = async () => {
+  const currentTimeFromIp = await getCurrentTimeFromApi();
 
-const StyledWrapper = styled("main")`
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  gap: 10px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  min-height: 100vh;
-`;
-
-export default function Home() {
   return (
-    <StyledWrapper>
-      <BaseTextInput labelName="Trainer's name" />
+    <Box>
+      {/*<StyledWrapper>*/}
+      <div></div>
+
+      <BodyText>BodyText Body Text</BodyText>
+      <Subtitle>My Subtitle</Subtitle>
+      <VisitDate time={currentTimeFromIp} />
+      <LabeledTextInput
+        labelName="Trainer's name"
+        placeholder="Placeholder..."
+        helperText="Helper Text"
+      />
       <BaseButton>Click me</BaseButton>
+      <BaseButton color="secondary">Click me</BaseButton>
 
       <BaseChip>Some Test</BaseChip>
-      <BaseTextInput labelName="Trainer's name" />
+      {/*<BaseTextInput labelName="Trainer's name" />*/}
+      <LabeledTextInput labelName="Trainer's name" />
+      <BaseTextInput placeholder="Trainer's name" />
+
+      <PokemonSearcher />
 
       <BaseButton>Click me</BaseButton>
 
@@ -121,6 +125,9 @@ export default function Home() {
       {/*    </a>*/}
       {/*  </div>*/}
       {/*</StyledWrapper>*/}
-    </StyledWrapper>
+      {/*</StyledWrapper>*/}
+    </Box>
   );
-}
+};
+
+export default Home;

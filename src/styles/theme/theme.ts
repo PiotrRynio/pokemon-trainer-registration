@@ -9,6 +9,7 @@ export const theme = createTheme({
   typography: {
     fontFamily: "inherit",
   },
+
   palette: {
     primary: {
       main: colors.primary,
@@ -21,9 +22,20 @@ export const theme = createTheme({
       dark: colors.grey300,
       contrastText: colors.grey100,
     },
+
+    error: {
+      main: colors.error,
+    },
   },
   shape: {
     borderRadius: borderRadius.default,
   },
+
+  components: {
+    MuiIcon: {
+      styleOverrides: {},
+    },
+  },
+
   shadows: muiShadows,
 });

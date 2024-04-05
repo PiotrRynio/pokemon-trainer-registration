@@ -1,12 +1,10 @@
 import "./globals.css";
 
-import { ThemeProvider } from "@mui/material/styles";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { ReactNode } from "react";
 
-import { theme } from "@/styles/theme/theme";
+import { AppProvides } from "@/providers/AppProvides";
 
 const myLocalFont = localFont({
   src: "./../fonts/Web437_IBM_VGA_9x16.woff",
@@ -26,9 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={myLocalFont.className}>
       <body>
-        <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
-        </AppRouterCacheProvider>
+        <AppProvides>{children}</AppProvides>
       </body>
     </html>
   );
