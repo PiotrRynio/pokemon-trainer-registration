@@ -1,39 +1,52 @@
-"use client";
-import { styled } from "@mui/system";
+import { ChangeEvent } from "react";
+
+import { VerticalGapBox } from "@/components/Boxes/VerticalGapBox/VerticalGapBox";
+import { BaseHelperText } from "@/components/HelperText/BaseHelperText";
+import { BaseTextInput } from "@/components/Inputs/TextInput/BaseTextInput/BaseTextInput";
+import { BaseLabel } from "@/components/Label/BaseLabel";
 
 export type LabeledTextInputProps = {
   labelName: string;
   placeholder?: string;
   helperText?: string;
   isHelperTextError?: boolean;
+  isFullWidth?: boolean;
+  type?: "number";
+  inputName?: string;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
 };
 
-import { BaseHelperText } from "@/components/HelperText/BaseHelperText";
-import { BaseTextInput } from "@/components/Inputs/TextInput/BaseTextInput/BaseTextInput";
-import { BaseLabel } from "@/components/Label/BaseLabel";
-
-const StyledWrapper = styled("div")`
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-`;
-
 export const LabeledTextInput = ({
+  value,
   labelName,
   placeholder,
   helperText,
   isHelperTextError,
+  isFullWidth,
+  type,
+  inputName,
+  onChange,
 }: LabeledTextInputProps) => {
   return (
-    <StyledWrapper>
+    <VerticalGapBox gap="2px">
       <BaseLabel labelText={labelName}>
-        <BaseTextInput placeholder={placeholder || labelName} />
+        <BaseTextInput
+          placeholder={placeholder || labelName}
+          isFullWidth={isFullWidth}
+          type={type}
+          name={inputName}
+          onChange={onChange}
+          value={value}
+        />
       </BaseLabel>
 
-      <BaseHelperText
-        helperText={helperText}
-        isHelperTextError={isHelperTextError}
-      />
-    </StyledWrapper>
+      {helperText ? (
+        <BaseHelperText
+          helperText={helperText}
+          isHelperTextError={isHelperTextError}
+        />
+      ) : null}
+    </VerticalGapBox>
   );
 };

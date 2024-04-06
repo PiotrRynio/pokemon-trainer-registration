@@ -1,3 +1,5 @@
+"use client";
+
 import { InputLabel } from "@mui/material";
 import { styled } from "@mui/system";
 import { ReactNode } from "react";

@@ -9,7 +9,7 @@ export type BaseChipProps = {
   children: ReactNode;
 };
 
-const StyledChip = styled(Chip)(({ theme }) => ({
+const StyledChip = styled(Chip)(() => ({
   gap: "10px",
   height: "28px",
   padding: "0px 0px",

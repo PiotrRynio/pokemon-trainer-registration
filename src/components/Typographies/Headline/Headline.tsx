@@ -5,16 +5,15 @@ import { colors } from "@/styles/common/colors";
 
 type SubtitleProps = {
   children?: ReactNode;
-  fontSize?: string;
 };
 
-export const BodyText = ({ children, fontSize = "14px" }: SubtitleProps) => {
+export const Headline = ({ children }: SubtitleProps) => {
   return (
     <Typography
-      variant="body1"
-      lineHeight="20px"
-      fontSize={fontSize}
-      color={colors.grey100}
+      variant="h4"
+      lineHeight="40px"
+      color={colors.black}
+      fontSize="40px"
     >
       {children}
     </Typography>

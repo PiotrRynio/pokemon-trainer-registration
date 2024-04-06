@@ -1,3 +1,4 @@
+"use client";
 import { FormHelperText } from "@mui/material";
 import { styled } from "@mui/system";
 
@@ -8,13 +9,12 @@ export type BaseHelperTextProps = {
   isHelperTextError?: boolean;
 };
 
-const StyledFormHelperText = styled(FormHelperText)`
-  height: 16px;
-  margin: 0;
-  font-size: 10px;
-  line-height: 16px;
-  color: ${colors.grey100};
-`;
+const StyledFormHelperText = styled(FormHelperText)(({ theme }) => ({
+  height: 16,
+  margin: 0,
+  fontSize: 10,
+  color: colors.grey100,
+}));
 
 export const BaseHelperText = ({
   isHelperTextError,

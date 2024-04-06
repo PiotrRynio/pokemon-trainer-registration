@@ -1,19 +1,19 @@
-import { ChangeEvent } from "react";
-
 import { BaseHelperText } from "@/components/HelperText/BaseHelperText";
 import { BaseLabel } from "@/components/Label/BaseLabel";
 import { BaseSelect } from "@/components/Selects/BaseSelect/BaseSelect";
 import { StyledLabeledSelectWrapper } from "@/components/Selects/LabeledSelect/LabeledSelect.styled";
-import { Option } from "@/type/Option";
 
 type LabeledSelectProps = {
   labelName: string;
-  options: Option[];
+  options: string[];
   placeholder?: string;
   helperText?: string;
   isHelperTextError?: boolean;
-  onInputChange?: (event: ChangeEvent<{}>, value: string) => void;
+  onInputChange?: (value: string) => void;
   isLoading?: boolean;
+  isFullWidth?: boolean;
+  onChange?: (value: string | null) => void;
+  value?: string;
 };
 
 export const LabeledSelect = ({
@@ -24,6 +24,9 @@ export const LabeledSelect = ({
   isHelperTextError,
   onInputChange,
   isLoading,
+  isFullWidth,
+  onChange,
+  value,
 }: LabeledSelectProps) => {
   return (
     <StyledLabeledSelectWrapper>
@@ -33,13 +36,18 @@ export const LabeledSelect = ({
           options={options}
           onInputChange={onInputChange}
           isLoading={isLoading}
+          isFullWidth={isFullWidth}
+          onChange={onChange}
+          value={value}
         />
       </BaseLabel>
 
-      <BaseHelperText
-        helperText={helperText}
-        isHelperTextError={isHelperTextError}
-      />
+      {helperText ? (
+        <BaseHelperText
+          helperText={helperText}
+          isHelperTextError={isHelperTextError}
+        />
+      ) : null}
     </StyledLabeledSelectWrapper>
   );
 };
