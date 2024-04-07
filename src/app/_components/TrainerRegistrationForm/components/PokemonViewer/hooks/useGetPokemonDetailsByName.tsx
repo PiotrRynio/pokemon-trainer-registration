@@ -15,18 +15,17 @@ export type PokemonDetailsType = {
 export const useGetPokemonDetailsByName = ({
   pokemonName,
 }: UseGetSearchProps) => {
+  const isPokemonName = !!pokemonName;
+
   return useQuery<PokemonDetailsType>({
     queryFn: async () => {
-      console.log(pokemonName);
-      const isPokemonName = !!pokemonName;
-      if (!isPokemonName) {
-        return Promise.reject("No pokemon name provided");
-      }
-
       const url = `${externalApiPaths.pokemonApi.pokemon}/${pokemonName}`;
 
       return fetch(url).then((response) => response.json());
     },
+
     queryKey: ["get-pokemon-by-name-" + pokemonName],
+
+    enabled: isPokemonName,
   });
 };

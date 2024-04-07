@@ -58,6 +58,13 @@ export const BaseSelect = ({
       filterOptions={(options) => options}
       clearIcon={null}
       onChange={onChangeHandler}
+      componentsProps={{
+        paper: {
+          sx: {
+            textTransform: "capitalize",
+          },
+        },
+      }}
     />
   );
 };

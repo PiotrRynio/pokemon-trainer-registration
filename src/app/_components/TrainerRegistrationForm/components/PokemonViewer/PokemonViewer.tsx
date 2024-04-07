@@ -12,7 +12,6 @@ import { borders } from "@/styles/common/borders";
 export const PokemonViewer = () => {
   const [{ value: pokemonName }] = useField("pokemonName");
 
-  console.log("pokemonName", pokemonName);
   const { data: pokemonDetailsData } = useGetPokemonDetailsByName({
     pokemonName,
   });
@@ -26,12 +25,12 @@ export const PokemonViewer = () => {
       borderRadius={borderRadius.default}
     >
       <VerticalCenterBox>
-        {!isPokemonDetailsDataExist ? (
+        {isPokemonDetailsDataExist ? (
+          <PokemonDetails pokemonDetails={pokemonDetailsData} />
+        ) : (
           <HorizontalCenterBox>
             <BodyText fontSize="12px">Your Pokemon</BodyText>
           </HorizontalCenterBox>
-        ) : (
-          <PokemonDetails pokemonDetails={pokemonDetailsData} />
         )}
       </VerticalCenterBox>
     </Box>

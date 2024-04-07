@@ -5,7 +5,7 @@ import { borderRadius } from "@/styles/common/borderRadius";
 import { colors } from "@/styles/common/colors";
 import { muiShadows } from "@/styles/theme/muiShadows";
 
-export const theme = createTheme({
+const themeOptions = {
   typography: {
     fontFamily: "inherit",
   },
@@ -26,6 +26,10 @@ export const theme = createTheme({
     error: {
       main: colors.error,
     },
+
+    disabledBackground: {
+      main: colors.disabledBackground,
+    },
   },
   shape: {
     borderRadius: borderRadius.default,
@@ -38,4 +42,10 @@ export const theme = createTheme({
   },
 
   shadows: muiShadows,
-});
+};
+
+export type CustomThemeOptions = typeof themeOptions;
+
+export const theme = createTheme(themeOptions);
+
+// export type CustomTheme = typeof theme;

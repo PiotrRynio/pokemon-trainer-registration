@@ -9,8 +9,8 @@ export const getCurrentTimeFromApi = async () => {
     ip === "127.0.0.1" || ip === "localhost" || ip === "::1";
 
   if (!ip || isLocalhostIp) {
-    return await fetchTimeByTimeZone();
+    return fetchTimeByTimeZone();
   }
 
-  return await fetchTimeByIp(ip);
+  return fetchTimeByIp(ip);
 };

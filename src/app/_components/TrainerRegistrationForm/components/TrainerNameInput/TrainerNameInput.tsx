@@ -9,7 +9,7 @@ export const TrainerNameInput = ({}: TrainerNameInputProps) => {
 
   return (
     <LabeledTextInput
-      labelName="Trainer's age"
+      labelName="Trainer's name"
       value={value}
       isFullWidth
       inputName="trainerName"
