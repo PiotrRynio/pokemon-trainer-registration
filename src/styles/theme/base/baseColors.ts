@@ -1,4 +1,4 @@
-export const colors = {
+export const baseColors = {
   primary: "#9747FF",
   primaryDark: "#7135BF",
   primaryLight: "rgba(151, 71, 255, 0.25)",
@@ -11,4 +11,4 @@ export const colors = {
 
   white: "#FFFFFF",
   black: "#000000",
-};
+} as const;

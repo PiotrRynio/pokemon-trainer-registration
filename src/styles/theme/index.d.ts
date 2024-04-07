@@ -1,10 +1,10 @@
 declare module "@mui/material/styles" {
   interface Theme {
-    palette: {
-      disabledBackground: {
-        main: string;
-      };
-    } & import("@mui/material").Palette;
+    base: import("./theme").CustomBase;
+  }
+
+  interface ThemeOptions {
+    base: import("./theme").CustomBase;
   }
 }
 

@@ -1,38 +1,47 @@
 "use client";
 import { createTheme } from "@mui/material/styles";
 
-import { borderRadius } from "@/styles/common/borderRadius";
-import { colors } from "@/styles/common/colors";
+import { baseBorderRadius } from "@/styles/theme/base/baseBorderRadius";
+import { baseBorders } from "@/styles/theme/base/baseBorders";
+import { baseColors } from "@/styles/theme/base/baseColors";
+import { baseGaps } from "@/styles/theme/base/baseGaps";
+import { baseShadows } from "@/styles/theme/base/baseShadows";
 import { muiShadows } from "@/styles/theme/muiShadows";
 
-const themeOptions = {
+const base = {
+  colors: baseColors,
+  borderRadius: baseBorderRadius,
+  borders: baseBorders,
+  gaps: baseGaps,
+  shadows: baseShadows,
+} as const;
+
+export type CustomBase = typeof base;
+
+export const theme = createTheme({
   typography: {
     fontFamily: "inherit",
   },
 
   palette: {
     primary: {
-      main: colors.primary,
-      dark: colors.primaryDark,
-      contrastText: colors.white,
+      main: baseColors.primary,
+      dark: baseColors.primaryDark,
+      contrastText: baseColors.white,
     },
 
     secondary: {
-      main: colors.grey400,
-      dark: colors.grey300,
-      contrastText: colors.grey100,
+      main: baseColors.grey400,
+      dark: baseColors.grey300,
+      contrastText: baseColors.grey100,
     },
 
     error: {
-      main: colors.error,
-    },
-
-    disabledBackground: {
-      main: colors.disabledBackground,
+      main: baseColors.error,
     },
   },
   shape: {
-    borderRadius: borderRadius.default,
+    borderRadius: baseBorderRadius.default,
   },
 
   components: {
@@ -42,10 +51,6 @@ const themeOptions = {
   },
 
   shadows: muiShadows,
-};
 
-export type CustomThemeOptions = typeof themeOptions;
-
-export const theme = createTheme(themeOptions);
-
-// export type CustomTheme = typeof theme;
+  base,
+});

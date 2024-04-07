@@ -1,7 +1,5 @@
-import { Box } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { ReactNode } from "react";
-
-import { gaps } from "@/styles/common/gaps";
 
 type HorizontalGapBoxProps = {
   children?: ReactNode;
@@ -11,11 +9,18 @@ type HorizontalGapBoxProps = {
 
 export const HorizontalGapBox = ({
   children,
-  gap = gaps.default,
+  gap,
   justifyContent = "flex-start",
 }: HorizontalGapBoxProps) => {
+  const theme = useTheme();
+
   return (
-    <Box width="100%" display="flex" gap={gap} justifyContent={justifyContent}>
+    <Box
+      width="100%"
+      display="flex"
+      gap={gap || theme.base.gaps.default}
+      justifyContent={justifyContent}
+    >
       {children}
     </Box>
   );

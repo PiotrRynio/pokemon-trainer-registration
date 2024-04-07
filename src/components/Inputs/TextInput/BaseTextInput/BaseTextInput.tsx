@@ -9,7 +9,7 @@ export type BaseTextInputProps = {
   type?: "number";
   name?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-  value?: string;
+  value?: string | number;
 } & Omit<TextFieldProps, "fullWidth">;
 
 export const BaseTextInput = ({

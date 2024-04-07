@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pokemon Trainer Registration
+
+This is a simple web application that allows users to register as a Pokemon Trainer. The application is built using [Next.js](https://nextjs.org/), a React framework.
+
+Repo url: [Link](https://github.com/PiotrRynio/pokemon-trainer-registration)
 
 ## Getting Started
 
-First, run the development server:
+### Running Production version (locally):
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Install Docker & Docker Compose.
+2. Clone this project locally.
+3. Run `docker-compose -f docker-compose.yml up` in your bash/command line (in main folder).
+   Make sure that ports 3000 is free on your machine before.
+4. Go to `http://localhost:3000` in your browser.
+5. Have fun!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running the development version:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Install `Node` and `NPM` on your machine.
+2. Use `npm install` to install all dependencies.
+3. Run `npm run dev` to start the development server.
+4. Go to `http://localhost:3000` in your browser. 
+5. The page auto-updates as you edit the file.
+6Have fun!
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Others:
 
-## Learn More
+- App port: 3000
+- Node version: 18
+- NPM version: 10.2.3
+- [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Additionally, you can start production version by running `npm install` and `npm run presentation` in your bash/command line (in main folder).
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Tests:
 
-## Deploy on Vercel
+I decided not to mock requests to NextApi because I want to test the all app together (with backend part).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+***!!! IMPORTANT !!!*** 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**If you want to run tests, please run the application first.**
+
+Queries to external APIs are mocked
+
+
+---
+
+### Authors
+
+_Piotr Rynio_  
+Contact:
+pwrynio@gmail.com  
+github.com/PiotrRynio/
+
+---

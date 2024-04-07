@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, capitalize } from "@mui/material";
 import Image from "next/image";
 
 import { PokemonDetailsType } from "@/app/_components/TrainerRegistrationForm/components/PokemonViewer/hooks/useGetPokemonDetailsByName";
@@ -35,18 +35,18 @@ export const PokemonDetails = ({ pokemonDetails }: PokemonDetailsProps) => {
 
       <VerticalCenterBox>
         <VerticalGapBox gap="8px">
-          <BodyText>Name: {name}</BodyText>
+          <BodyText noWrap>Name: {capitalize(name)}</BodyText>
 
           <Box display="flex" gap="8px" alignItems="center">
-            <BodyText>Type:</BodyText>
+            <BodyText noWrap>Type:</BodyText>
             {typesNames.map((typeName) => (
               <BaseChip key={typeName}>{typeName}</BaseChip>
             ))}
           </Box>
 
-          <BodyText>Base experience: {baseExperience}</BodyText>
+          <BodyText noWrap>Base experience: {baseExperience}</BodyText>
 
-          <BodyText>Id: {id}</BodyText>
+          <BodyText noWrap>Id: {id}</BodyText>
         </VerticalGapBox>
       </VerticalCenterBox>
     </HorizontalGapBox>

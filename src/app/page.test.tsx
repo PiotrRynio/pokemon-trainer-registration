@@ -1,12 +1,8 @@
-import {
-  render,
-  screen,
-  waitForElementToBeRemoved,
-} from "@testing-library/react";
+import { screen, waitForElementToBeRemoved } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 
-import { AppProvides } from "@/providers/AppProvides";
+import { render } from "@/tests/test-utils";
 
 import Page from "./page";
 
@@ -18,9 +14,7 @@ describe("Home Page", () => {
   }));
 
   beforeEach(async () => {
-    render(await Page(), {
-      wrapper: ({ children }) => <AppProvides>{children}</AppProvides>,
-    });
+    render(await Page());
   });
 
   test("should render correctly", async () => {
@@ -68,7 +62,7 @@ describe("Home Page", () => {
       const trainerAgeInput = screen.getByPlaceholderText("Trainer's age");
       await user.type(trainerAgeInput, correctUserAge);
 
-      const pokemonNameInput = screen.getByPlaceholderText("Choose");
+      const pokemonNameInput = screen.getByPlaceholderText("Choose", {});
       await user.type(pokemonNameInput, correctPokemonName);
 
       await waitForElementToBeRemoved(() =>
@@ -129,7 +123,7 @@ describe("Home Page", () => {
       const trainerAgeInput = screen.getByPlaceholderText("Trainer's age");
       expect(trainerAgeInput).toHaveValue(null);
 
-      const pokemonNameInput = screen.getByPlaceholderText("Choose");
+      const pokemonNameInput = await screen.findByPlaceholderText("Choose", {});
       expect(pokemonNameInput).toHaveValue("");
 
       const trainerNameError = screen.queryByText(
@@ -170,7 +164,7 @@ describe("Home Page", () => {
     const trainerAgeInput = screen.getByPlaceholderText("Trainer's age");
     await user.type(trainerAgeInput, "102");
 
-    const pokemonNameInput = screen.getByPlaceholderText("Choose");
+    const pokemonNameInput = await screen.findByPlaceholderText("Choose", {});
     await user.type(pokemonNameInput, "Pika");
 
     const submitButton = screen.getByRole("button", { name: "Submit" });

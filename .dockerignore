@@ -1,0 +1,30 @@
+# Logi
+logs
+*.log
+npm-debug.log*
+
+# Katalogi zależności
+node_modules
+/jspm_packages/
+
+# IDE - IntelliJ
+.idea
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Build output
+/dist
+/build
+
+# Testy
+/__tests__/
+/__snapshots__/
+
+# Config files
+.env
+.dockerignore
+.gitignore
+Dockerfile
+docker-compose.yml

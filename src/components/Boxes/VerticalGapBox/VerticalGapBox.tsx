@@ -1,7 +1,5 @@
-import { Box } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { ReactNode } from "react";
-
-import { gaps } from "@/styles/common/gaps";
 
 type VerticalGapBoxProps = {
   children?: ReactNode;
@@ -11,15 +9,17 @@ type VerticalGapBoxProps = {
 
 export const VerticalGapBox = ({
   children,
-  gap = gaps.default,
+  gap,
   justifyContent = "flex-start",
 }: VerticalGapBoxProps) => {
+  const theme = useTheme();
+
   return (
     <Box
       width="100%"
       display="flex"
       flexDirection="column"
-      gap={gap}
+      gap={gap || theme.base.gaps.default}
       justifyContent={justifyContent}
     >
       {children}

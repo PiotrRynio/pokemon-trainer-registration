@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest"
+    "test": "vitest",
+    "presentation": "docker-compose -f docker-compose.yml up"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",

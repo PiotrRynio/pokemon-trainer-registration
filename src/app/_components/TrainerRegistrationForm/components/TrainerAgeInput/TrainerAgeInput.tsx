@@ -1,11 +1,13 @@
 import { useField } from "formik";
 
+import { TrainerRegistrationFormValues } from "@/app/_components/TrainerRegistrationForm/types/TrainerRegistrationFormValues";
 import { LabeledTextInput } from "@/components/Inputs/TextInput/LabeledTextInput/LabeledTextInput";
 
 type TrainerNameInputProps = {};
 
 export const TrainerAgeInput = ({}: TrainerNameInputProps) => {
-  const [{ onChange, name, value }, { error }] = useField("trainerAge");
+  const [{ onChange, name, value }, { error }] =
+    useField<TrainerRegistrationFormValues["trainerAge"]>("trainerAge");
 
   return (
     <LabeledTextInput

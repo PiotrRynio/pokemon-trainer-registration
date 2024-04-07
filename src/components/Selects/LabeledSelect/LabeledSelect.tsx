@@ -1,7 +1,7 @@
+import { VerticalGapBox } from "@/components/Boxes/VerticalGapBox/VerticalGapBox";
 import { BaseHelperText } from "@/components/HelperText/BaseHelperText";
 import { BaseLabel } from "@/components/Label/BaseLabel";
 import { BaseSelect } from "@/components/Selects/BaseSelect/BaseSelect";
-import { StyledLabeledSelectWrapper } from "@/components/Selects/LabeledSelect/LabeledSelect.styled";
 
 type LabeledSelectProps = {
   labelName: string;
@@ -29,7 +29,7 @@ export const LabeledSelect = ({
   value,
 }: LabeledSelectProps) => {
   return (
-    <StyledLabeledSelectWrapper>
+    <VerticalGapBox gap="2px">
       <BaseLabel labelText={labelName}>
         <BaseSelect
           placeholder={placeholder}
@@ -48,6 +48,6 @@ export const LabeledSelect = ({
           isHelperTextError={isHelperTextError}
         />
       ) : null}
-    </StyledLabeledSelectWrapper>
+    </VerticalGapBox>
   );
 };

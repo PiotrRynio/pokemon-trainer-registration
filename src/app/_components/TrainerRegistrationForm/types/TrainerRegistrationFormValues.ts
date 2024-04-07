@@ -1,5 +1,5 @@
 export type TrainerRegistrationFormValues = {
-  trainerName: string | "";
-  trainerAge: number | "";
-  pokemonName: number | "";
+  trainerName: string;
+  trainerAge: string;
+  pokemonName: string;
 };

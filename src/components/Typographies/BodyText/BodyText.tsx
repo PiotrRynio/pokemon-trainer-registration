@@ -1,20 +1,26 @@
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import { ReactNode } from "react";
-
-import { colors } from "@/styles/common/colors";
 
 type SubtitleProps = {
   children?: ReactNode;
   fontSize?: string;
+  noWrap?: boolean;
 };
 
-export const BodyText = ({ children, fontSize = "14px" }: SubtitleProps) => {
+export const BodyText = ({
+  children,
+  fontSize = "14px",
+  noWrap,
+}: SubtitleProps) => {
+  const theme = useTheme();
+
   return (
     <Typography
       variant="body1"
       lineHeight="20px"
       fontSize={fontSize}
-      color={colors.grey100}
+      color={theme.base.colors.grey100}
+      noWrap={noWrap}
     >
       {children}
     </Typography>

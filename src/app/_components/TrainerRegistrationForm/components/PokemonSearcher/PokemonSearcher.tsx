@@ -6,15 +6,12 @@ import { useState } from "react";
 import { useGetSearch } from "@/app/_components/TrainerRegistrationForm/components/PokemonSearcher/useGetSearch";
 import { LabeledSelect } from "@/components/Selects/LabeledSelect/LabeledSelect";
 
-type PokemonNameSearcherProps = {
-  onChange?: (value: string | null) => void;
-};
-
-export const PokemonSearcher = ({ onChange }: PokemonNameSearcherProps) => {
+export const PokemonSearcher = () => {
   const [{ value }, { error }, { setValue }] = useField("pokemonName");
 
   const [searchedText, setSearchedText] = useState("");
   const throttledSearchedText = useThrottle(searchedText, 750);
+
   const { data, isLoading } = useGetSearch({
     searchedText: throttledSearchedText,
   });
@@ -26,8 +23,7 @@ export const PokemonSearcher = ({ onChange }: PokemonNameSearcherProps) => {
   };
 
   const onChangeHandler = async (value: string | null) => {
-    onChange && onChange(value);
-    await setValue(value);
+    await setValue(value || "");
   };
 
   return (

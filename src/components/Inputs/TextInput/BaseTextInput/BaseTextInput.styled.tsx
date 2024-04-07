@@ -1,14 +1,9 @@
 "use client";
-import { TextField } from "@mui/material";
-import { styled } from "@mui/system";
-
-import { borders } from "@/styles/common/borders";
-import { colors } from "@/styles/common/colors";
-import { shadows } from "@/styles/common/shadows";
+import { styled, TextField } from "@mui/material";
 
 type StyledTextInputProps = { fullWidth?: boolean };
 export const StyledTextInput = styled(TextField)<StyledTextInputProps>(
-  ({ fullWidth }) => ({
+  ({ fullWidth, theme }) => ({
     width: fullWidth ? "100%" : 320,
 
     "& .MuiOutlinedInput-root": {
@@ -21,21 +16,22 @@ export const StyledTextInput = styled(TextField)<StyledTextInputProps>(
         padding: "14px 10px",
         lineHeight: 20,
         fontSize: 14,
-        color: colors.grey100,
+        textTransform: "capitalize",
+        color: theme.base.colors.grey100,
       },
 
       "& fieldset": {
         boxSizing: "border-box",
         height: 53,
         width: "100%",
-        border: borders.default,
+        border: theme.base.borders.default,
       },
       "&:hover fieldset": {
-        border: borders.primary,
+        border: theme.base.borders.primary,
       },
       "&.Mui-focused fieldset": {
-        border: borders.primary,
-        boxShadow: shadows.focused,
+        border: theme.base.borders.primary,
+        boxShadow: theme.base.shadows.focused,
       },
     },
 

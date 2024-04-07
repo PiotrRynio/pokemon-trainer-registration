@@ -1,8 +1,7 @@
 import { Box, Dialog } from "@mui/material";
-import { useFormikContext } from "formik";
 import React from "react";
 
-import { TrainerRegistrationFormValues } from "@/app/_components/TrainerRegistrationForm/types/TrainerRegistrationFormValues";
+import { useTrainerRegistrationFormContext } from "@/app/_components/TrainerRegistrationForm/hooks/useTrainerRegistrationFormContext";
 import { HorizontalCenterBox } from "@/components/Boxes/HorizontalCenterBox/HorizontalCenterBox";
 import { VerticalCenterBox } from "@/components/Boxes/VerticalCenterBox/VerticalCenterBox";
 import { VerticalGapBox } from "@/components/Boxes/VerticalGapBox/VerticalGapBox";
@@ -18,7 +17,7 @@ export const SuccessSubmitDialog = ({
   onClose,
   isOpened,
 }: SuccessSubmitDialogProps) => {
-  const { resetForm } = useFormikContext<TrainerRegistrationFormValues>();
+  const { resetForm } = useTrainerRegistrationFormContext();
 
   const onButtonClick = () => {
     resetForm();

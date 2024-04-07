@@ -5,7 +5,7 @@ import { BaseHelperText } from "@/components/HelperText/BaseHelperText";
 import { BaseTextInput } from "@/components/Inputs/TextInput/BaseTextInput/BaseTextInput";
 import { BaseLabel } from "@/components/Label/BaseLabel";
 
-export type LabeledTextInputProps = {
+type LabeledTextInputProps = {
   labelName: string;
   placeholder?: string;
   helperText?: string;

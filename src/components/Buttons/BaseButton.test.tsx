@@ -1,5 +1,7 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import { describe, expect, test, vi } from "vitest";
+
+import { render } from "@/tests/test-utils";
 
 import { BaseButton } from "./BaseButton";
 

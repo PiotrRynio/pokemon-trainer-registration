@@ -37,8 +37,6 @@ export const BaseSelect = ({
     onChange && onChange(value);
   };
 
-  console.log("value", value);
-
   return (
     <Autocomplete
       value={value || null}
