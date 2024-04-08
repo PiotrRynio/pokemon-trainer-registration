@@ -37,7 +37,7 @@ Repo url: [Link](https://github.com/PiotrRynio/pokemon-trainer-registration)
 
 ## Tests:
 
-I decided not to mock requests to NextApi because I want to test the all app together (with backend part).
+I decided not to mock requests to Next Api because I wanted to test the all app together (with backend part).
 
 ***!!! IMPORTANT !!!*** 
 
