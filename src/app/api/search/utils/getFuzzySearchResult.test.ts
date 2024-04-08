@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 
-import { getFuzzySearchResult } from "@/app/api/search/getFuzzySearchResult";
+import { getFuzzySearchResult } from "@/app/api/search/utils/getFuzzySearchResult";
 
 describe("getFuzzySearchResult", () => {
   test("return correct result", () => {

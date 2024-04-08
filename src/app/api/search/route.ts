@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
-import { getFuzzySearchResult } from "@/app/api/search/getFuzzySearchResult";
-import { getSearchParamFromRequest } from "@/app/api/search/getSearchParamFromRequest";
+import { getFuzzySearchResult } from "@/app/api/search/utils/getFuzzySearchResult";
+import { getSearchParamFromRequest } from "@/app/api/search/utils/getSearchParamFromRequest";
 
 import pokemonData from "./data.json";
 
