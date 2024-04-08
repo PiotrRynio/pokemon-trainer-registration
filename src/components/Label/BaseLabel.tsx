@@ -1,5 +1,3 @@
-"use client";
-
 import { ReactNode } from "react";
 
 import { VerticalGapBox } from "@/components/Boxes/VerticalGapBox/VerticalGapBox";

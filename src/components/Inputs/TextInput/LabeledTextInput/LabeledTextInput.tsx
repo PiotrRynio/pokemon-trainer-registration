@@ -1,3 +1,4 @@
+"use client";
 import { ChangeEvent } from "react";
 
 import { VerticalGapBox } from "@/components/Boxes/VerticalGapBox/VerticalGapBox";

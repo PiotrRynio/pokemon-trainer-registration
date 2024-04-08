@@ -1,3 +1,4 @@
+"use client";
 import { VerticalGapBox } from "@/components/Boxes/VerticalGapBox/VerticalGapBox";
 import { BaseHelperText } from "@/components/HelperText/BaseHelperText";
 import { BaseLabel } from "@/components/Label/BaseLabel";

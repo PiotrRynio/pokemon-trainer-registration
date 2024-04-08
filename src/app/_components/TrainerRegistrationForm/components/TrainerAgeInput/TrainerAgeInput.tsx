@@ -1,3 +1,4 @@
+"use client";
 import { useField } from "formik";
 
 import { TrainerRegistrationFormValues } from "@/app/_components/TrainerRegistrationForm/types/TrainerRegistrationFormValues";

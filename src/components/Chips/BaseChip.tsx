@@ -1,4 +1,3 @@
-"use client";
 import { ReactNode } from "react";
 
 import { StyledChip } from "./BaseChip.styled";

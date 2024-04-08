@@ -7,8 +7,8 @@ import pokemonData from "./data.json";
 
 export async function GET(request: Request) {
   const searchedPattern = getSearchParamFromRequest(request, "name");
-
   const pokemonList = pokemonData.data;
+
   if (!searchedPattern) {
     return NextResponse.json(pokemonList);
   }

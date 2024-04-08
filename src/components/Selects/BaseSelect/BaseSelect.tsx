@@ -1,3 +1,4 @@
+"use client";
 import { Autocomplete, TextFieldProps } from "@mui/material";
 import { ChangeEvent, SyntheticEvent } from "react";
 
