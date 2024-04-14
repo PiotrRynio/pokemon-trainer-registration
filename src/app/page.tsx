@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { TrainerRegistrationForm } from "@/app/_components/TrainerRegistrationForm/TrainerRegistrationForm";
 import { getCurrentTimeFromApi } from "@/app/_utils/getCurrentTimeFromApi/getCurrentTimeFromApi";
 import Blog from "@/app/blog/page";
+import BlogStatic from "@/app/blog-static/page";
 
 const Home = async () => {
   const currentTimeFromIp = await getCurrentTimeFromApi();
@@ -22,6 +23,7 @@ const Home = async () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Blog />
       </Suspense>
+      <BlogStatic />
     </Box>
   );
 };
