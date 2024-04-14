@@ -1,21 +1,18 @@
 "use server";
 
-import { headers } from "next/headers";
-
-import { fetchTimeByIp } from "@/app/_utils/getCurrentTimeFromApi/fetchTimeByIp";
 import { fetchTimeByTimeZone } from "@/app/_utils/getCurrentTimeFromApi/fetchTimeByTimeZone";
 
 export const getCurrentTimeFromApi = async () => {
   "use server";
   console.log("INSIDE getCurrentTimeFromApi");
 
-  const ip = headers().get("X-Forwarded-For");
-  const isLocalhostIp =
-    ip === "127.0.0.1" || ip === "localhost" || ip === "::1";
+  // const ip = headers().get("X-Forwarded-For");
+  // const isLocalhostIp =
+  //   ip === "127.0.0.1" || ip === "localhost" || ip === "::1";
+  //
+  // if (!ip || isLocalhostIp) {
+  return fetchTimeByTimeZone();
+  // }
 
-  if (!ip || isLocalhostIp) {
-    return fetchTimeByTimeZone();
-  }
-
-  return fetchTimeByIp(ip);
+  // return fetchTimeByIp(ip);
 };
