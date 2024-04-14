@@ -31,6 +31,8 @@ export const TrainerRegistrationForm = ({
 }: TrainerRegistrationFormProps) => {
   const [isSuccessDialogOpened, setIsSuccessDialogOpened] = useState(false);
 
+  console.log("CLIENT currentTime", currentTime);
+
   const handleSubmit = () => {
     setIsSuccessDialogOpened(true);
   };
@@ -49,6 +51,14 @@ export const TrainerRegistrationForm = ({
           <VerticalGapBox>
             <HorizontalGapBox justifyContent="flex-end">
               <VisitDate time={currentTime} />
+              <span>
+                {currentTime.hour}h : {currentTime.minute}min :{" "}
+                {currentTime.seconds}sec
+              </span>
+              <br />
+              <span>
+                {currentTime.date}/{currentTime.month}/{currentTime.year}
+              </span>
             </HorizontalGapBox>
 
             <HorizontalGapBox>
