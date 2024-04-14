@@ -1,3 +1,4 @@
+"use server";
 import { Box } from "@mui/material";
 import { Suspense } from "react";
 
